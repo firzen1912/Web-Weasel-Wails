@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Set the width of the body and add padding */
+body {
+  width: 220px;
+  padding: 10px;
+  justify-content: center;
+}
+
+/* Common styling for labels */
+label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Styling for a group of user information */
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Optional: Align items at the center horizontally */
+}
+
+/* Margin adjustments for specific text elements */
+.device-info-text,
+.ip-adr-text,
+.neighbor-ip-text {
+  margin-bottom: 5px;
+  width: 200px;
+  display: inline-block;
+}
+
+/* Styling for the icon */
+.icon {
+  margin-left: 60px; /* Adjust as needed */
+}
+
+/* Centering for elements inside icon-switch */
+.icon-switch {
+  align-items: center;
+}
+
+/* Styling for the icon button */
+.iconButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  align-items: center;
+}
+
+/* Styling for the icon image */
+.icon-img {
+  width: 80px; /* Adjusted icon width */
+  height: 80px; /* Adjusted icon height */
+  margin: 0 auto; /* Center the icon horizontally */
+}
+
+/* Styling for switches */
+.switch {
+  display: flex;
+  align-items: center;
+}
+
+/* Hide the actual checkbox input */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Styling for the label text with ellipsis for longer text */
+.label-text {
+  width: 163px; /* Set a fixed width for the label text */
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; /* Add ellipsis for longer text */
+}
+
+/* Styling for the slider container */
+.slider-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+/* Styling for the slider track */
+.slider {
+  flex: 1;
+  position: relative;
+  cursor: pointer;
+  height: 20px;
+  max-width: 40px; /* Adjusted max-width to reduce length */
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 20px;
+}
+
+/* Styling for the slider thumb */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px; /* Flip the position to the left */
+  top: 2px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+/* Styling for checked state of the slider */
+input:checked + .slider {
+  background-color: #a2e4b8;
+}
+
+/* Styling for checked state of the slider thumb */
+input:checked + .slider:before {
+  transform: translateX(100%); /* Flip the thumb to the right */
+}
+
+/* Styling for the custom button */
+.custom-button {
+  margin-left: 45px;
+  margin-bottom: 10px;
+}
+
+/* Styling for links inside the custom button */
+.custom-button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Styling for link hover state */
+.custom-button a:hover {
+  text-decoration: underline; /* Add underline on hover if needed */
+}
+
+.input-container {
+  text-align: center;
+  margin-bottom: 10px; /* Adjust margin as needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-container label,
+.input-container input,
+.input-container button {
+  margin: 5px auto; /* Center align elements horizontally */
+}
