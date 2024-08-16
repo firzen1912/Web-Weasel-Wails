@@ -1,13 +1,17 @@
 package main
 
 import (
+	"Web-Weasel/backend"
 	"context"
 	"fmt"
+
+	"github.com/wailsapp/wails/runtime"
 )
 
 // App struct
 type App struct {
 	ctx context.Context
+	runtime.Runtime
 }
 
 // NewApp creates a new App application struct
@@ -19,9 +23,13 @@ func NewApp() *App {
 // so we can call the runtime methods
 func (a *App) startup(ctx context.Context) {
 	a.ctx = ctx
+	backend.Run()
 }
 
-// Greet returns a greeting for the given name
-func (a *App) Greet(name string) string {
-	return fmt.Sprintf("Hello %s, It's show time!", name)
+func (a *App) OpenLink(url string) error {
+	err := a.Browser.OpenURL(url)
+	if err != nil {
+		fmt.Println(err)
+	}
+	return nil
 }

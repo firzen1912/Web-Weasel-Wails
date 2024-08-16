@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Layout from "../Layout.jsx";
+import OpenLink from "../util/OpenLink.tsx"
 
 const Caching = () => {
   // State for storing URL list
@@ -68,6 +69,10 @@ const Caching = () => {
       });
   };
 
+  const openInNewBrowserWindow = (url) => {
+    OpenLink(url);
+  }
+
   return (
     <Layout>
       <div
@@ -101,7 +106,8 @@ const Caching = () => {
               <li key={url}>
                 <a
                   href={"http://localhost:8080/retrieve?path=" + url}
-                  target="_blank"
+                  target="new"
+                  onClick={() => openInNewBrowserWindow("http://localhost:8080/retrieve?path=" + url)}
                   rel="noopener noreferrer"
                 >
                   {url}
